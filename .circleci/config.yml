@@ -2,7 +2,7 @@
 # https://github.com/cypress-io/circleci-orb
 version: 2.1
 orbs:
-  cypress: cypress-io/cypress@3
+  cypress: cypress-io/cypress@1
 
 executors:
   latest:
@@ -85,14 +85,14 @@ jobs:
 workflows:
   build:
     jobs:
-      - cypress-install:
+      - cypress/install:
           executor: latest
           pre-steps:
             - run: npm config set unsafe-perm true
 
-      - cypress-run:
+      - cypress/run:
           requires:
-            - cypress-install
+            - cypress/install
           executor: latest
           parallel: true
           parallelism: 2
@@ -111,4 +111,4 @@ workflows:
 
       - merge-coverage:
           requires:
-            - cypress-run
+            - cypress/run
