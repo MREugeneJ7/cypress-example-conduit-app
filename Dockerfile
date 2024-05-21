@@ -1,6 +1,6 @@
 # Set the base image to use for subsequent instructions
 FROM node:12.16.2-alpine
-RUN apk add g++ make python
+RUN apk add g++ make python libtool autoconf automake
 
 # Add metadata to an image 
 LABEL app="cypress-conduit"
@@ -18,7 +18,6 @@ COPY . /usr/src/app/
 
 # Execute any commands on top of the current image as a new layer and commit the results.
 RUN npm install
-
 RUN npm run postinstall
 
 # Define the network ports that this container will listen on at runtime.
