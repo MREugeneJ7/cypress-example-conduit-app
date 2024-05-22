@@ -22,6 +22,7 @@ RUN npm run postinstall
 
 # Define the network ports that this container will listen on at runtime.
 EXPOSE 4100
+EXPOSE 3000
 
 # Configure the container to be run as an executable.
 ENTRYPOINT ["npm", "start"]
