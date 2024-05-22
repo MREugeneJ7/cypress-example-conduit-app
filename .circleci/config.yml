@@ -102,7 +102,7 @@ jobs:
     machine: true
     steps:
       - gcp-cli/install:
-          components: kubect
+          components: kubectl
       # Update a deployment Docker image.
       - gcp-gke/rollout-image:
           deployment: autopilot-cluster-1
