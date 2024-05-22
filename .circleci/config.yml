@@ -86,10 +86,10 @@ jobs:
   Build-Push-Image-Docker:
     description: Build and push image to Google Container Registry
     machine: true
-    no_output_timeout: 3h
     steps:
       - checkout
       - gcr/gcr-auth
+          no_output_timeout: 3h
       - gcr/build-image:
           image: mreugenej7/test
           tag: "v2" #Change version number e.g to 'v3' when updating application
