@@ -86,6 +86,7 @@ jobs:
   Build-Push-Image-Docker:
     description: Build and push image to Google Container Registry
     machine: true
+    no_output_timeout: 3h
     steps:
       - checkout
       - gcr/gcr-auth
