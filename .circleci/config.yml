@@ -104,6 +104,9 @@ jobs:
       - gcp-cli/setup:
           components: 'gke-gcloud-auth-plugin kubectl --quiet'
       # Update a deployment Docker image.
+      - gcp-gke/update-kubeconfig-with-credentials:
+          cluster: autopilot-cluster-1
+          use_gke_cloud_auth_plugin: true
       - gcp-gke/rollout-image:
           deployment: autopilot-cluster-1
           container: dominic-backend
