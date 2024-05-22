@@ -101,7 +101,7 @@ jobs:
     description: Deploy application to Google Kubernetes Engine
     machine: true
     steps:
-      - gcp-cli/install:
+      - gcp-cli/setup:
           components: kubectl
       # Update a deployment Docker image.
       - gcp-gke/rollout-image:
