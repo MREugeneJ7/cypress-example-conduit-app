@@ -5,6 +5,7 @@ orbs:
   cypress: cypress-io/cypress@1
   gcp-gke: circleci/gcp-gke@2.2.0
   gcr: circleci/gcp-gcr@0.16.3
+  gcp-cli: circleci/gcp-cli@3.2.0
 
 executors:
   latest:
@@ -100,6 +101,8 @@ jobs:
     description: Deploy application to Google Kubernetes Engine
     machine: true
     steps:
+      - gcp-cli/install:
+        components: kubect
       # Update a deployment Docker image.
       - gcp-gke/rollout-image:
           deployment: autopilot-cluster-1
