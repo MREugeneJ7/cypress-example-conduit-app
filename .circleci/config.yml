@@ -1,4 +1,4 @@
-# see orb options at
+# see orb options a
 # https://github.com/cypress-io/circleci-orb
 version: 2.1
 orbs:
@@ -102,7 +102,7 @@ jobs:
     machine: true
     steps:
       - gcp-cli/setup:
-          components: kubectl
+          components: 'gke-gcloud-auth-plugin kubectl --quiet'
       # Update a deployment Docker image.
       - gcp-gke/rollout-image:
           deployment: autopilot-cluster-1
