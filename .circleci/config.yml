@@ -1,10 +1,11 @@
-# see orb options at
+# see orb options a
 # https://github.com/cypress-io/circleci-orb
 version: 2.1
 orbs:
   cypress: cypress-io/cypress@1
   gcp-gke: circleci/gcp-gke@2.2.0
   gcr: circleci/gcp-gcr@0.16.3
+  gcp-cli: circleci/gcp-cli@3.2.0
 
 executors:
   latest:
@@ -100,7 +101,12 @@ jobs:
     description: Deploy application to Google Kubernetes Engine
     machine: true
     steps:
+      - gcp-cli/setup:
+          components: 'gke-gcloud-auth-plugin kubectl --quiet'
       # Update a deployment Docker image.
+      - gcp-gke/update-kubeconfig-with-credentials:
+          cluster: autopilot-cluster-1
+          use_gke_cloud_auth_plugin: true
       - gcp-gke/rollout-image:
           deployment: production-circle-demo
           container: dominic-backend
