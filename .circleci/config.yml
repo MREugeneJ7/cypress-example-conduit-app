@@ -102,7 +102,7 @@ jobs:
     steps:
       # Update a deployment Docker image.
       - gcp-gke/rollout-image:
-          deployment: autopilot-cluster-1
+          deployment: production-circle-demo
           container: dominic-backend
           image: mreugenej7/test:v2 # change version when updating
 
