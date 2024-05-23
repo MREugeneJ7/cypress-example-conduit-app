@@ -109,7 +109,7 @@ jobs:
           use_gke_cloud_auth_plugin: true
       - gcp-gke/rollout-image:
           deployment: production-circle-demo
-          container: dominic-backend
+          container: rusty-pangolin
           image: mreugenej7/test:v2 # change version when updating
 
 
