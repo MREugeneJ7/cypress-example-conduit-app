@@ -93,9 +93,11 @@ jobs:
       - gcr/build-image:
           image: mreugenej7
           tag: "v2" #Change version number e.g to 'v3' when updating application
+          registry-url: eu.gcr.io
       - gcr/push-image:
           image: mreugenej7
-          tag: "v2" #Change version number e.g to 'v3' when updating application
+          tag: "v2"
+          registry-url: eu.gcr.io #Change version number e.g to 'v3' when updating application
     
   deploy:
     description: Deploy application to Google Kubernetes Engine
