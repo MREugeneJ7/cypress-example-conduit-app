@@ -110,7 +110,7 @@ jobs:
       - gcp-gke/rollout-image:
           deployment: production-circle-demo
           container: rusty-pangolin
-          image: mreugenej7 # change version when updating
+          image: mreugenej7:v2 # change version when updating
 
 
 workflows:
