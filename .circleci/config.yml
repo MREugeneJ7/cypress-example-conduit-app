@@ -112,7 +112,7 @@ jobs:
       - gcp-gke/rollout-image:
           deployment: production-circle-demo
           container: rusty-pangolin
-          image: mreugenej7
+          image: gcr.io/practica-final-devops/mreugenej7
           tag: v2 # change version when updating
 
 
